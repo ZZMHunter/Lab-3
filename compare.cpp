@@ -4,7 +4,7 @@
     Instructor: Tong Yi
     Assignment: Lab 3C
 
-    Write a program compare.cpp that asks the user to input two dates (the beginning and the end of the interval). 
+    Write a program compare.cpp that asks the user to input two dates (the beginning and the end of the interval).
     The program should check each day in the interval and report which basin had higher elevation
     on that day by printing “East” or “West”, or print “Equal” if both basins are at the same level.
 */
@@ -14,7 +14,9 @@
 #include <cstdlib>
 #include <climits>
 
-int main(){
+int main()
+{
+    // initialize variables
     std::string startDate, endDate, curDate, junk;
     double eVol, wVol, eElevation, wElevation;
     bool active = false;
@@ -29,20 +31,33 @@ int main(){
         exit(1);
     }
     getline(data, junk);
-    while (data >> curDate >> eVol >> eElevation >> wVol >> wElevation){
+    while (data >> curDate >> eVol >> eElevation >> wVol >> wElevation)
+    {
         data.ignore(INT_MAX, '\n');
-        if (curDate == startDate){
+        // sets active to true so while loop will start comparing elevation
+        if (curDate == startDate)
+        {
             active = true;
         }
-        if (active){
-            if (eElevation > wElevation){
+        if (active)
+        {
+            // compare east elevation and west elevation for dates within start and end date
+            if (eElevation > wElevation)
+            {
                 std::cout << "East is higher" << std::endl;
-            }else if (wElevation > eElevation){
+            }
+            else if (wElevation > eElevation)
+            {
                 std::cout << "West is higher" << std::endl;
-            }else{
-                std::cout << "Equal" << std::endl;            }
+            }
+            else
+            {
+                std::cout << "Equal" << std::endl;
+            }
         }
-        if (curDate == endDate){
+        // sets active to false so the while loop will stop comparing elevation
+        if (curDate == endDate)
+        {
             active = false;
         }
     }

@@ -14,7 +14,7 @@
 
 int main()
 {
-    //create variables
+    // create variables
     std::string junk;
     std::string date;
     double max;
@@ -26,18 +26,20 @@ int main()
         std::cerr << "File cannot be opened for reading." << std::endl;
         exit(1);
     }
-    //gets rid of the first line
+    // gets rid of the first line
     getline(data, junk);
     max = INT_MIN;
     min = INT_MAX;
-    //replaces variables if they are greater or less
+    // replaces variables if they are greater or less
     while (data >> date >> AUGEVolume)
     {
         data.ignore(INT_MAX, '\n');
-        if (AUGEVolume > max) {
+        if (AUGEVolume > max)
+        {
             max = AUGEVolume;
         }
-        if (AUGEVolume < min) {
+        if (AUGEVolume < min)
+        {
             min = AUGEVolume;
         }
     }

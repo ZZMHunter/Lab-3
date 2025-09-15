@@ -16,6 +16,7 @@
 
 int main()
 {
+    // initialize variables
     std::string startDate, endDate, curDate, junk, wElevation;
     double eVol, wVol, eElevation;
     bool active;
@@ -34,6 +35,7 @@ int main()
     getline(data, junk);
     while (data >> curDate >> eVol >> eElevation >> wVol >> wElevation)
     {
+        // puts dates and elevation as a string into array set in order
         data.ignore(INT_MAX, '\n');
         if (curDate == startDate)
         {
@@ -49,6 +51,7 @@ int main()
             active = false;
         }
     }
+    // prints array in reverse order
     for (int i = count - 1; i >= 0; i--)
     {
         std::cout << set[i] << std::endl;

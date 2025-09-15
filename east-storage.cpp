@@ -15,12 +15,12 @@
 
 int main()
 {
-    //create variables
+    // create variables
     std::string date;
     std::string inputDate;
     std::string junk;
     double AUGEVolume;
-    //prompts user to input date and opens file
+    // prompts user to input date and opens file
     std::cout << "Enter date: ";
     std::cin >> inputDate;
     std::ifstream data("./Current_Reservoir_Levels.tsv");
@@ -29,7 +29,7 @@ int main()
         std::cerr << "File cannot be opened for reading." << std::endl;
         exit(1);
     }
-    //gets rid of the first line
+    // gets rid of the first line
     getline(data, junk);
     while (data >> date >> AUGEVolume)
     {
