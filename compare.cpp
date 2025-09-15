@@ -44,14 +44,17 @@ int main()
             // compare east elevation and west elevation for dates within start and end date
             if (eElevation > wElevation)
             {
+                std::cout << curDate << " ";
                 std::cout << "East is higher" << std::endl;
             }
             else if (wElevation > eElevation)
             {
+                std::cout << curDate << " ";
                 std::cout << "West is higher" << std::endl;
             }
             else
             {
+                std::cout << curDate << " ";
                 std::cout << "Equal" << std::endl;
             }
         }
